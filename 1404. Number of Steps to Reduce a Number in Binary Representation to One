@@ -1,0 +1,33 @@
+class Solution {
+    public int numSteps(String s) {
+        int n = s.length();
+        
+       
+        int[][] dp = new int[n][2];
+        
+       
+        dp[n - 1][0] = 0;
+        dp[n - 1][1] = 0;
+        
+        int steps = 0;
+        int carry = 0;
+
+       
+        for (int i = n - 1; i > 0; i--) {
+            int bit = s.charAt(i) - '0';
+            int sum = bit + carry;
+
+            if (sum == 1) {
+                
+                steps += 2;
+                carry = 1;
+            } else {
+                
+                steps += 1;
+                
+            }
+        }
+
+        return steps + carry;
+    }
+}
