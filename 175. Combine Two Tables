@@ -1,0 +1,15 @@
+-- create database table;
+-- use table;
+
+-- create table Preson(personId int primary key, lastName varchar(20),firstName varchar(20));
+-- insert into Person values(1,"Wang","Allen"),(2,"Alice","Bob");
+
+-- select city,state from Address where personId = 1;
+SELECT 
+    p.firstName,
+    p.lastName,
+    a.city,
+    a.state
+FROM Person p
+LEFT JOIN Address a
+ON p.personId = a.personId;
